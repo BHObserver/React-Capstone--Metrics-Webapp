@@ -21,7 +21,7 @@ const AirPollutionDetails = ({ lat, lon }) => {
 
   // Define a function to apply styles based on AQI
   const getAqiColor = (aqi) => {
-    if (aqi === 1 || aqi === 2) {
+    if (aqi === 1 || aqi === 2 || aqi === 3) {
       return { background: 'green' };
     }
     if (aqi === 4 || aqi === 5) {
