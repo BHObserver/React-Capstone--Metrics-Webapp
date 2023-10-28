@@ -1,23 +1,33 @@
-import React from 'react';
-import home from './img/homee.png';
-import search from './img/searchh.png';
-import map from './img/map.png'
 
-function Header() {
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import home from './images/home.png';
+import search from './images/search.png';
+import '../App.css';
+
+const Header = () => {
+  const location = useLocation();
+
   return (
-    <header>
-      <nav>
-        <div className="nav-container">
-          <img src={home} alt="home-icon" />
-          <h1>HOME</h1>
-          <img src={search} alt="home-icon" />
-        </div>
-      </nav>
-      <div className="map-img-container">
-        <img className="map-img" src={map} alt="World Map" />
-      </div>
-    </header>
+    <>
+      <header className="header">
+        <nav className="navbar">
+
+          <div className="nav-item">
+            <NavLink to="/" className="navlink">
+              <img className='icon' src={home} alt="home" />
+            </NavLink>
+          </div>
+          <div className="nav-item">
+            <p className="page-title">{location.pathname === '/' ? 'HOME' : 'DETAILS'}</p>
+          </div>
+          <div className="nav-item">
+            <img className='icon' src={search} alt="search" />
+          </div>
+        </nav>
+      </header>
+      <Outlet />
+    </>
   );
-}
+};
 
 export default Header;
