@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import PropTypes from 'prop-types'; // Import PropTypes
+import PropTypes from 'prop-types';
 import { fetchAirPollutionData } from '../redux/airPollution/airPollutionSlice';
 import './air-pollution-details.css';
 
