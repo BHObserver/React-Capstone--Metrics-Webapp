@@ -1,0 +1,68 @@
+/* air-pollution-details.css */
+
+.air-pollution-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f900;
+  }
+  
+  .air-pollution-details h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  .air-pollution-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .air-pollution-table th,
+  .air-pollution-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  
+  .air-pollution-table th {
+    background-color: #33333300;
+    color: #fff;
+  }
+  
+  .air-pollution-table td {
+    background-color: #ffffff00;
+    color: #ffffff;
+  }
+  
+  /* Style AQI based on qualitative name */
+  .air-pollution-table tr:last-child td:last-child {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .capital-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .capital-name {
+    text-align: center;
+  }
+
+  .capital-latlon {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px;
+  }
