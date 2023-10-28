@@ -60,7 +60,7 @@
 
 ## Presentation Video <a name="video-presentation"></a>
 
-<iframe width="560" height="315" src="https://drive.google.com/file/d/1auVEmllYGsjo_myBEMS24ganLjZIO0R7/view?usp=sharing" frameborder="0" allowfullscreen></iframe>
+[![Project Walkthrough Video](https://www.google.com/url?sa=i&url=https%3A%2F%2Fgetawalkthrough.com%2FlogIn&psig=AOvVaw0V22ZYwOgeBNCtDVpQ2JOK&ust=1698609527104000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLCh8d_DmYIDFQAAAAAdAAAAABAE)](https://drive.google.com/file/d/1auVEmllYGsjo_myBEMS24ganLjZIO0R7/view?usp=sharing)
 
 - [Presentation Video Link](https://drive.google.com/file/d/1auVEmllYGsjo_myBEMS24ganLjZIO0R7/view?usp=sharing)
 
