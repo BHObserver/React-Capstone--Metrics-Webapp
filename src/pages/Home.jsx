@@ -1,7 +1,7 @@
 import Continent from '../components/Continents';
 import Contents from '../components/Contents';
 import map from '../components/images/map.png';
-import '../App.css'
+import '../App.css';
 
 const Home = () => (
   <>

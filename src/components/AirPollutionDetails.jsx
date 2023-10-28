@@ -42,35 +42,67 @@ const AirPollutionDetails = ({ lat, lon }) => {
             </tr>
             <tr>
               <td>CO</td>
-              <td>{airPollutionData.list[0].components.co} µg/m³</td>
+              <td>
+                {airPollutionData.list[0].components.co}
+                {' '}
+                µg/m³
+              </td>
             </tr>
             <tr>
               <td>NO</td>
-              <td>{airPollutionData.list[0].components.no} µg/m³</td>
+              <td>
+                {airPollutionData.list[0].components.no}
+                {' '}
+                µg/m³
+              </td>
             </tr>
             <tr>
               <td>NO2</td>
-              <td>{airPollutionData.list[0].components.no2} µg/m³</td>
+              <td>
+                {airPollutionData.list[0].components.no2}
+                {' '}
+                µg/m³
+              </td>
             </tr>
             <tr>
               <td>O3</td>
-              <td>{airPollutionData.list[0].components.o3} µg/m³</td>
+              <td>
+                {airPollutionData.list[0].components.o3}
+                {' '}
+                µg/m³
+              </td>
             </tr>
             <tr>
               <td>SO2</td>
-              <td>{airPollutionData.list[0].components.so2} µg/m³</td>
+              <td>
+                {airPollutionData.list[0].components.so2}
+                {' '}
+                µg/m³
+              </td>
             </tr>
             <tr>
               <td>PM2.5</td>
-              <td>{airPollutionData.list[0].components.pm2_5} µg/m³</td>
+              <td>
+                {airPollutionData.list[0].components.pm2_5}
+                {' '}
+                µg/m³
+              </td>
             </tr>
             <tr>
               <td>PM10</td>
-              <td>{airPollutionData.list[0].components.pm10} µg/m³</td>
+              <td>
+                {airPollutionData.list[0].components.pm10}
+                {' '}
+                µg/m³
+              </td>
             </tr>
             <tr>
               <td>NH3</td>
-              <td>{airPollutionData.list[0].components.nh3} µg/m³</td>
+              <td>
+                {airPollutionData.list[0].components.nh3}
+                {' '}
+                µg/m³
+              </td>
             </tr>
             <tr>
               <td>Qualitative AQI</td>

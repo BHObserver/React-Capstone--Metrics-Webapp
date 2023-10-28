@@ -7,7 +7,7 @@ export const fetchCityData = createAsyncThunk('city/fetchCityData', async (city,
   try {
     const response = await axios.get('https://api.api-ninjas.com/v1/geocoding', {
       params: {
-        city: city,
+        city,
       },
       headers: {
         'X-Api-Key': 'T4jhMp6jkPwaYLrw2IN+dg==9djzc72tDHZm9ypC',

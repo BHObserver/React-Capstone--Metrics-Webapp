@@ -7,13 +7,13 @@ export const fetchAirPollutionData = createAsyncThunk(
   async ({ lat, lon, apiKey }) => {
     try {
       const response = await axios.get(
-        `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`
+        `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`,
       );
       return response.data;
     } catch (error) {
       throw error(error.message);
     }
-  }
+  },
 );
 
 const airPollutionSlice = createSlice({

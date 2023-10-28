@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
-import { getCityCoordinates } from '../redux/country/geoSlice'; // Import the action to fetch lon and lat
 import { BounceLoader } from 'react-spinners';
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
+import { getCityCoordinates } from '../redux/country/geoSlice'; // Import the action to fetch lon and lat
 import { countryDetails } from '../redux/country/allCountriesSlice'; // Import the action to fetch country details
 import AirPollutionDetails from '../components/AirPollutionDetails';
 
@@ -40,7 +40,6 @@ const Details = () => {
             }
           });
           setHasLogged(true); // Mark that the console.log has occurred
-
         }
       });
     }
@@ -48,7 +47,7 @@ const Details = () => {
 
   return (
     <>
-    <Link to="/" className="back-btn">
+      <Link to="/" className="back-btn">
         <BsFillArrowLeftCircleFill />
       </Link>
       {loading ? (
@@ -59,12 +58,18 @@ const Details = () => {
             <>
               <h2 className="capital-name">{capitalDetails.name}</h2>
               <div className="capital-latlon">
-                <span>Latitude: {capitalDetails.latitude.toFixed(2)}</span>
-                <span>Longitude: {capitalDetails.longitude.toFixed(2)}</span>
+                <span>
+                  Latitude:
+                  {capitalDetails.latitude.toFixed(2)}
+                </span>
+                <span>
+                  Longitude:
+                  {capitalDetails.longitude.toFixed(2)}
+                </span>
               </div>
-              
+
                 {/* Display the air pollution data based on the latitude and longitude */}
-                <AirPollutionDetails lat={capitalDetails.latitude} lon={capitalDetails.longitude} />
+              <AirPollutionDetails lat={capitalDetails.latitude} lon={capitalDetails.longitude} />
             </>
           )}
         </div>
