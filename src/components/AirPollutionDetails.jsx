@@ -19,6 +19,17 @@ const AirPollutionDetails = ({ lat, lon }) => {
     return 'Unknown'; // Handle any other cases
   };
 
+  // Define a function to apply styles based on AQI
+  const getAqiColor = (aqi) => {
+    if (aqi === 1 || aqi === 2) {
+      return { background: 'green' };
+    }
+    if (aqi === 4 || aqi === 5) {
+      return { background: 'red' };
+    }
+    return {};
+  };
+
   useEffect(() => {
     if (lat && lon) {
       dispatch(fetchAirPollutionData({ lat, lon, apiKey }));
@@ -39,7 +50,9 @@ const AirPollutionDetails = ({ lat, lon }) => {
           <tbody>
             <tr>
               <td>AQI (Air Quality Index)</td>
-              <td>{airPollutionData.list[0].main.aqi}</td>
+              <td>
+                {airPollutionData.list[0].main.aqi}
+              </td>
             </tr>
             <tr>
               <td>CO</td>
@@ -107,7 +120,9 @@ const AirPollutionDetails = ({ lat, lon }) => {
             </tr>
             <tr>
               <td>Qualitative AQI</td>
-              <td>{qualitativeName(airPollutionData.list[0].main.aqi)}</td>
+              <td style={getAqiColor(airPollutionData.list[0].main.aqi)}>
+                {qualitativeName(airPollutionData.list[0].main.aqi)}
+              </td>
             </tr>
           </tbody>
         </table>
