@@ -98,7 +98,7 @@ To run tests, run the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Al Amin Khan Shakil**
+👤 **Burhan Uddin**
 
 - GitHub: [Burhan Uddin](https://github.com/bhobserver)
 - Twitter: [Burhan Uddin](https://twitter.com/BurhanU14173360)
