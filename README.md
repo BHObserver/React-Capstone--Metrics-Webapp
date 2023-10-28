@@ -58,6 +58,10 @@
 
 - [Capital Airstat Live Link](https://captalairstat.onrender.com/)
 
+## Presentation Video <a name="video-presentation"></a>
+
+- [Presentation Video Link](https://drive.google.com/file/d/1auVEmllYGsjo_myBEMS24ganLjZIO0R7/view?usp=sharing)
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
