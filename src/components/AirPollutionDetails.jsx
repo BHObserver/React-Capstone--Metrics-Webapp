@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes from 'prop-types'; // Import PropTypes
 import { fetchAirPollutionData } from '../redux/airPollution/airPollutionSlice';
 import './air-pollution-details.css';
 
@@ -115,6 +117,12 @@ const AirPollutionDetails = ({ lat, lon }) => {
       )}
     </div>
   );
+};
+
+// Prop validation for lat and lon
+AirPollutionDetails.propTypes = {
+  lat: PropTypes.number.isRequired,
+  lon: PropTypes.number.isRequired,
 };
 
 export default AirPollutionDetails;

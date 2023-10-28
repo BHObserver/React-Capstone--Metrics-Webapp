@@ -15,20 +15,16 @@ const Details = () => {
   const loading = useSelector((state) => state.city.loading);
 
   const [capitalDetails, setCapitalDetails] = useState(null);
-  const [hasLogged, setHasLogged] = useState(false); // State to track if the console.log has occurred
+  const [hasLogged, setHasLogged] = useState(false);
 
   useEffect(() => {
-    if (code && !hasLogged) { // Check if console.log has not occurred
-      // Fetch country details first
+    if (code && !hasLogged) {
       dispatch(countryDetails(code)).then((resultAction) => {
         if (resultAction.type === countryDetails.fulfilled.type) {
           const country = resultAction.payload;
           const countryName = country[0].name;
-          console.log(countryName);
-          // Extract the capital city name from country details
           const capitalCityName = country[0].capital[0];
 
-          // Fetch lon and lat of the capital city
           dispatch(getCityCoordinates(capitalCityName, countryName)).then((lonLatAction) => {
             const data = lonLatAction.payload[0];
             if (lonLatAction.type === getCityCoordinates.fulfilled.type) {
@@ -39,7 +35,7 @@ const Details = () => {
               });
             }
           });
-          setHasLogged(true); // Mark that the console.log has occurred
+          setHasLogged(true);
         }
       });
     }
@@ -59,16 +55,14 @@ const Details = () => {
               <h2 className="capital-name">{capitalDetails.name}</h2>
               <div className="capital-latlon">
                 <span>
-                  Latitude:
+                  Latitude:&nbsp;
                   {capitalDetails.latitude.toFixed(2)}
                 </span>
                 <span>
-                  Longitude:
+                  Longitude:&nbsp;
                   {capitalDetails.longitude.toFixed(2)}
                 </span>
               </div>
-
-                {/* Display the air pollution data based on the latitude and longitude */}
               <AirPollutionDetails lat={capitalDetails.latitude} lon={capitalDetails.longitude} />
             </>
           )}

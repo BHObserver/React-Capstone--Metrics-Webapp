@@ -1,7 +1,6 @@
 // citySlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import store from '../store'; // Import your Redux store
 
 export const fetchCityData = createAsyncThunk('city/fetchCityData', async (city, { rejectWithValue }) => {
   try {
@@ -21,7 +20,6 @@ export const fetchCityData = createAsyncThunk('city/fetchCityData', async (city,
 
 export const getCityCoordinates = createAsyncThunk('city/getCityCoordinates', async (capital, country) => {
   try {
-    const state = store.getState();
     const countryName = country;
     const capitalCityName = capital; // Get the capital city name from the countrySlice state
 
@@ -53,12 +51,6 @@ const citySlice = createSlice({
       .addCase(fetchCityData.rejected, (state, action) => {
         state.data = null;
         state.error = action.payload;
-      })
-      .addCase(getCityCoordinates.fulfilled, (state, action) => {
-        // Handle the response from getCityCoordinates if needed
-      })
-      .addCase(getCityCoordinates.rejected, (state, action) => {
-        // Handle the error from getCityCoordinates if needed
       });
   },
 });

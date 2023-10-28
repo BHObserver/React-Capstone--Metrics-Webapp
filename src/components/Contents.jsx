@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { BounceLoader } from 'react-spinners';
 import { allCountries } from '../redux/country/allCountriesSlice';
 import arrow from './images/enter.png';
 import '../App.css';
-import { BounceLoader } from 'react-spinners';
 
 const Contents = () => {
   const dispatch = useDispatch();
