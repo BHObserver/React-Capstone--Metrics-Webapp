@@ -18,15 +18,7 @@ export const allCountries = createAsyncThunk('country/allCountries', async () =>
   }
 });
 
-export const searchRegion = createAsyncThunk('country/searchRegion', async (region) => {
-  try {
-    const response = await axios.get(`https://restcountries.com/v3.1/region/${region}`);
-    const { data } = response;
-    return data;
-  } catch (error) {
-    throw error(error.message);
-  }
-});
+
 
 export const countryDetails = createAsyncThunk('country/countryDetails', async (code) => {
   try {
