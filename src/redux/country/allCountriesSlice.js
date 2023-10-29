@@ -38,3 +38,81 @@ export const countryDetails = createAsyncThunk('country/countryDetails', async (
   }
 });
 
+const countrySlice = createSlice({
+  name: 'country',
+  initialState,
+  reducers: {
+    getRegion: (state, action) => {
+      state.region = action.payload;
+    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(allCountries.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(allCountries.fulfilled, (state, action) => {
+        state.loading = false;
+        state.regionalCountries = action.payload.map((country) => ({
+          name: country.name.common,
+          area: country.area,
+          capital: country.capital,
+          code: country.cca3,
+          flag: country.flags.svg,
+          official: country.name.official,
+        }));
+        state.error = '';
+      })
+      .addCase(allCountries.rejected, (state, action) => {
+        state.loading = false;
+        state.regionalCountries = [];
+        state.error = action.payload;
+      })
+      .addCase(searchRegion.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(searchRegion.fulfilled, (state, action) => {
+        state.loading = false;
+        state.regionalCountries = action.payload.map((country) => ({
+          name: country.name.common,
+          area: country.area,
+          capital: country.capital,
+          code: country.cca3,
+          flag: country.flags.svg,
+          official: country.name.official,
+        }));
+        state.error = '';
+      })
+      .addCase(searchRegion.rejected, (state, action) => {
+        state.loading = false;
+        state.regionalCountries = [];
+        state.error = action.payload;
+      })
+      .addCase(countryDetails.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(countryDetails.fulfilled, (state, action) => {
+        state.loading = false;
+        state.singleCountry = {
+          name: action.payload[0].name.common,
+          area: action.payload[0].area,
+          capital: action.payload[0].capital,
+          flag: action.payload[0].flags.svg,
+          region: action.payload[0].region,
+          subregion: action.payload[0].subregion,
+          population: action.payload[0].population,
+          timezones: action.payload[0].timezones[0],
+          startOfWeek: action.payload[0].startOfWeek,
+          official: action.payload[0].name.official,
+        };
+        state.error = '';
+      })
+      .addCase(countryDetails.rejected, (state, action) => {
+        state.loading = false;
+        state.singleCountry = [];
+        state.error = action.payload;
+      });
+  },
+});
+
+export default countrySlice.reducer;
