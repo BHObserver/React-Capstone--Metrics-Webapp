@@ -1,12 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const initialState = {
-  regionalCountries: [],
-  singleCountry: {},
-  loading: false,
-  error: '',
-};
 
 export const allCountries = createAsyncThunk('country/allCountries', async () => {
   try {
